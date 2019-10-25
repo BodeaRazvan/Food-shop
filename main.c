@@ -18,9 +18,9 @@ int main() {
 
     int FoodMenu;
     char type[15];
-    char types[][15] = {"Main Dishes","Sides","Drinks","Desserts"};
+    char types[][15] = {"Sides","Main Dishes","Pizza","Soups","Drinks","Desserts"};
     printf("Please choose the food type\n");
-    for(int i=0;i<4;i++) {
+    for(int i=0;i<6;i++) {
         putchar('a'+i);
         printf(") %s\n",types[i]);
     }
