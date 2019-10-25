@@ -15,5 +15,17 @@ int main() {
     gets(phoneNumber);
     printf("---Address\n");
     gets(address);
+
+    int FoodMenu;
+    char type[15];
+    char types[][15] = {"Main Dishes","Sides","Drinks","Desserts"};
+    printf("Please choose the food type\n");
+    for(int i=0;i<4;i++) {
+        putchar('a'+i);
+        printf(") %s\n",types[i]);
+    }
+    char choice = getchar();
+    int foodChoice = choice - 'a';
+    printf("Chosen food type is %s\n",types[foodChoice]);
     return 0;
 }
