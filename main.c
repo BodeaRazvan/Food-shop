@@ -8,33 +8,35 @@ int main() {
 
     int ok=0;
 
+    int nrMenu;
+
     int nrFood = 3;
 
     char v[][10]={"Yes","No"};
 
     char Food[][10] = {"Pizza","Pasta","Salad"};
 
-    int FoodType[] = {3,3,3};
+    int FoodType[] = {3,3,4};
 
-    char models[3][3][20] = {
+    char Options[3][4][20] = {
 
-            {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita"},
+            {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita" },
 
-            {"Pasta Carbonara", "Spaghetti Bolognese", "Chicken Pasta"},
+            {"Chicken alfredo", "Mac&cheese"},
 
-            {"Potato Salad", "Asian Salad", "Caesar Salad"}
+            {"Tuna Salad", "Chicken Salad", "Greek Salad", "Cobb"}
 
     };
     int nocutlery=2;
     char cutlery[][15]={"Yes","No,thanks!"};
 
-    double prices[3][3] = {
+    double prices[3][4] = {
 
             {21, 23, 19},
 
-            {20, 17, 18},
+            {23, 21},
 
-            {15, 16, 17}
+            {23, 22, 19, 21 }
 
     };
 
@@ -112,6 +114,13 @@ int main() {
 
                 }
 
+                if (choice=='a')
+                    nrMenu=3;
+                    if (choice=='b')
+                        nrMenu=2;
+                        if (choice=='c')
+                            nrMenu=4;
+
                 FoodChoice = choice - 'a';
 
                 state++;
@@ -126,11 +135,11 @@ int main() {
 
                 printf("Please choose the type of %s\n",Food[FoodChoice]);
 
-                for(int i=0;i<nrFood;i++) {
+                for(int i=0;i<nrMenu;i++) {
 
                     putchar('a'+i);
 
-                    printf(") %s (%.2f)\n",models[FoodChoice][i], prices[FoodChoice][i]);
+                    printf(") %s (%.2f)\n",Options[FoodChoice][i], prices[FoodChoice][i]);
 
                 }
 
@@ -158,7 +167,7 @@ int main() {
 
             case 3: {
 
-                // Choose the additional items
+                // Choose the drink
 
                 printf("Please choose a drink to go with your %s (separated by comma if more),(press enter to skip this)\n",Food[FoodChoice]);
 
@@ -172,8 +181,6 @@ int main() {
 
                 printf("%c) Go back\n",'a'+noAdditionalItems);
 
-                //read additional items
-
                 //we want to check here for '\n' to allow the user to select 0 additional items
 
                 choice = getchar();
@@ -181,8 +188,6 @@ int main() {
                 if(choice == 'a'+noAdditionalItems) {
 
                     state--;
-
-                    //consume new line
 
                     getchar();
 
@@ -198,13 +203,9 @@ int main() {
 
                     noAddItemsChosen++;
 
-                    //read comma
-
                     char comma = getchar();
 
                     if(comma=='\n'){
-
-                        //after the last letter, a new line entered
 
                         break;
 
@@ -253,6 +254,7 @@ int main() {
             }
 
             case 5: {
+                //additional information
                 printf("Any additional info?\n");
                 printf("%c) Yes\n", 'a');
                 printf("%c) No\n", 'b');
@@ -285,7 +287,7 @@ int main() {
 
                 printf("Food items:\n");
 
-                printf("--%s (%.2f)\n", models[FoodChoice][MenuChoice], prices[FoodChoice][MenuChoice]);
+                printf("--%s (%.2f)\n", Options[FoodChoice][MenuChoice], prices[FoodChoice][MenuChoice]);
 
                 double additionalItemsPrice = 0;
 
@@ -327,8 +329,6 @@ int main() {
                     state--;
 
                 }
-
-                // consume new line
 
                 getchar();
 
