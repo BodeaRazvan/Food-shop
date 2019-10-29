@@ -1,4 +1,4 @@
-# Install script for directory: C:/CP/Food-shop
+# Install script for directory: C:/CP/food-ordering
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/CP/Food-shop/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/CP/food-ordering/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

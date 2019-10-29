@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/CP/Food-shop/main.c" "C:/CP/Food-shop/cmake-build-debug/CMakeFiles/FoodShop.dir/main.c.obj"
+  "C:/CP/food-ordering/main.c" "C:/CP/food-ordering/cmake-build-debug/CMakeFiles/FoodShop.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
