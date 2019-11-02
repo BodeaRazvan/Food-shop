@@ -265,6 +265,7 @@ int main() {
 
                 if (choice == 'b')
                 {state++;
+                  ok=0;
                     break;
                 }
                 if(choice == 'c') {
@@ -274,9 +275,11 @@ int main() {
                     break;
 
                 }
-                gets(Comment);
+                if(choice == 'a')
+                { printf("Please write your additional information!\n");
+                    gets(Comment);
                 ok=1;
-                state++;
+                state++;}
 
             }
             case 6:{
