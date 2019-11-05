@@ -74,6 +74,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/CP/food-ordering/AdditionalItems.c">
+			<Option target="FoodShop"/>
+		</Unit>
+		<Unit filename="C:/CP/food-ordering/Food.c">
+			<Option target="FoodShop"/>
+		</Unit>
+		<Unit filename="C:/CP/food-ordering/Functions.h">
+			<Option target="FoodShop"/>
+		</Unit>
+		<Unit filename="C:/CP/food-ordering/User.c">
+			<Option target="FoodShop"/>
+		</Unit>
 		<Unit filename="C:/CP/food-ordering/main.c">
 			<Option target="FoodShop"/>
 		</Unit>

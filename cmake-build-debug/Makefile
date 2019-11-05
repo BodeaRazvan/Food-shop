@@ -122,6 +122,87 @@ FoodShop/fast:
 	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/build
 .PHONY : FoodShop/fast
 
+AdditionalItems.obj: AdditionalItems.c.obj
+
+.PHONY : AdditionalItems.obj
+
+# target to build an object file
+AdditionalItems.c.obj:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/AdditionalItems.c.obj
+.PHONY : AdditionalItems.c.obj
+
+AdditionalItems.i: AdditionalItems.c.i
+
+.PHONY : AdditionalItems.i
+
+# target to preprocess a source file
+AdditionalItems.c.i:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/AdditionalItems.c.i
+.PHONY : AdditionalItems.c.i
+
+AdditionalItems.s: AdditionalItems.c.s
+
+.PHONY : AdditionalItems.s
+
+# target to generate assembly for a file
+AdditionalItems.c.s:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/AdditionalItems.c.s
+.PHONY : AdditionalItems.c.s
+
+Food.obj: Food.c.obj
+
+.PHONY : Food.obj
+
+# target to build an object file
+Food.c.obj:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/Food.c.obj
+.PHONY : Food.c.obj
+
+Food.i: Food.c.i
+
+.PHONY : Food.i
+
+# target to preprocess a source file
+Food.c.i:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/Food.c.i
+.PHONY : Food.c.i
+
+Food.s: Food.c.s
+
+.PHONY : Food.s
+
+# target to generate assembly for a file
+Food.c.s:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/Food.c.s
+.PHONY : Food.c.s
+
+User.obj: User.c.obj
+
+.PHONY : User.obj
+
+# target to build an object file
+User.c.obj:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/User.c.obj
+.PHONY : User.c.obj
+
+User.i: User.c.i
+
+.PHONY : User.i
+
+# target to preprocess a source file
+User.c.i:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/User.c.i
+.PHONY : User.c.i
+
+User.s: User.c.s
+
+.PHONY : User.s
+
+# target to generate assembly for a file
+User.c.s:
+	$(MAKE) -f CMakeFiles\FoodShop.dir\build.make CMakeFiles/FoodShop.dir/User.c.s
+.PHONY : User.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -158,6 +239,15 @@ help:
 	@echo ... rebuild_cache
 	@echo ... FoodShop
 	@echo ... edit_cache
+	@echo ... AdditionalItems.obj
+	@echo ... AdditionalItems.i
+	@echo ... AdditionalItems.s
+	@echo ... Food.obj
+	@echo ... Food.i
+	@echo ... Food.s
+	@echo ... User.obj
+	@echo ... User.i
+	@echo ... User.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

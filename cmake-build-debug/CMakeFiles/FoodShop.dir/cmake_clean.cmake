@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/FoodShop.dir/AdditionalItems.c.obj"
+  "CMakeFiles/FoodShop.dir/Food.c.obj"
+  "CMakeFiles/FoodShop.dir/User.c.obj"
   "CMakeFiles/FoodShop.dir/main.c.obj"
   "FoodShop.exe"
   "FoodShop.exe.manifest"
