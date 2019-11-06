@@ -6,7 +6,19 @@
 
 #IncludeRegexTransform: 
 
+C:/CP/food-ordering/AdditionalItems.c
+stdio.h
+-
+
+C:/CP/food-ordering/Food.c
+stdio.h
+-
+
 C:/CP/food-ordering/Functions.h
+stdio.h
+-
+
+C:/CP/food-ordering/User.c
 stdio.h
 -
 

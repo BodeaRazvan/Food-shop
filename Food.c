@@ -58,6 +58,7 @@ void AskCutlery(int *state,int *cutleryChoice){*state=4;
 
 
 
+
 void ChooseMenu(int nrMenu, int FoodChoice, int *state, int *MenuChoice ){
     // Choose the food type
     int FoodType[] = {3,3,4};
