@@ -3,7 +3,7 @@
 
 int main() {
     printf("Welcome to our food shop!\n");
-    // food info
+    // food data
     char Comment[100] ;
     int ok=0;
     int nrMenu=0;
