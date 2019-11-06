@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "Functions.h"
-#define MAX_ADDITIONAL_ITEM_NAME 30
 int main() {
     printf("Welcome to our food shop!\n");
     // food data
