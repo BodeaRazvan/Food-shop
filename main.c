@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "Functions.h"
+
 int main() {
     printf("Welcome to our food shop!\n");
     // food data
