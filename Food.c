@@ -34,6 +34,7 @@ void ChooseFood(int *state, int *nrMenu, int *FoodChoice){
 
 
 
+
 void AskCutlery(int *state,int *cutleryChoice){*state=4;
     int nocutlery=2;
     char cutlery[][15]={"Yes","No,thanks!"};

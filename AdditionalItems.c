@@ -3,7 +3,6 @@
 //
 // Created by razvi on 11/4/2019.
 //
-
 void printAdditionalItemsChoices(int noAdditionalItems, char additionalItems[][MAX_ADDITIONAL_ITEM_NAME], double additionalItemsPrices[]) {
 
     // Choose the additional items

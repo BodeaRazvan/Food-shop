@@ -45,6 +45,7 @@ void AdditionalInfo(int *state, int *ok,char *Comment){
 
 
 
+
 void DisplayContract(char Username[], int FoodChoice, int MenuChoice, int noAddItemsChosen, const int *chosenAdditionalItems, int cutleryChoice, int ok, int *contractSigned, char *Comment, int *state){
     char Options[3][4][20] = {
             {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita" },

@@ -7,6 +7,7 @@
 #ifndef FOODSHOP_FUNCTII_H
 #define FOODSHOP_FUNCTII_H
 
+
 void ChooseMenu(int nrMenu, int FoodChoice, int *state, int *MenuChoice );
 void DisplayContract(char Username[], int FoodChoice, int MenuChoice, int noAddItemsChosen,const int *chosenAdditionalItems, int cutleryChoice, int ok, int *contractSigned, char *Comment, int *state);
 void ChooseFood(int *state, int *nrMenu, int *FoodChoice);
