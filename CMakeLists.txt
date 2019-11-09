@@ -3,4 +3,4 @@ project(FoodShop C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(FoodShop main.c Functions.h Food.c AdditionalItems.c User.c)
+add_executable(FoodShop main.c Functions.h User.c AdditionalItems.c Food.c)

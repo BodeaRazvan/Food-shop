@@ -3,7 +3,7 @@
 //
 // Created by razvi on 11/5/2019.
 //
-void ChooseFood(int *state, int *nrMenu, int *FoodChoice){
+void chooseFood(int *state, int *nrMenu, int *FoodChoice){
     // Choose the food
     int var=0;
     int nrFood=3;
@@ -26,16 +26,13 @@ void ChooseFood(int *state, int *nrMenu, int *FoodChoice){
         *nrMenu=2;
     if (choice=='c')
         *nrMenu=4;
-    if (var) {(*state)--;}
-    else{*FoodChoice = choice - 'a';
-        (*state)++;}
+   if (var) {(*state)--;}
+   else{*FoodChoice = choice - 'a';
+    (*state)++;}
 
 }
 
-
-
-
-void AskCutlery(int *state,int *cutleryChoice){*state=4;
+void askCutlery(int *state, int *cutleryChoice){ *state=4;
     int nocutlery=2;
     char cutlery[][15]={"Yes","No,thanks!"};
     int choice;
@@ -53,13 +50,9 @@ void AskCutlery(int *state,int *cutleryChoice){*state=4;
     }
     *cutleryChoice = choice - 'a';
     (*state)++;
-
 }
 
-
-
-
-void ChooseMenu(int nrMenu, int FoodChoice, int *state, int *MenuChoice ){
+void chooseMenu(int nrMenu, int FoodChoice, int *state, int *MenuChoice ){
     // Choose the food type
     int FoodType[] = {3,3,4};
     char Food[][10] = {"Pizza","Pasta","Salad"};

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "Functions.h"
-
+#define MAX_ADDITIONAL_ITEM_NAME 30
 int main() {
     printf("Welcome to our food shop!\n");
-    // food info
+    // food data
     char Comment[100] ;
     int ok=0;
     int nrMenu=0;
@@ -22,27 +22,27 @@ int main() {
     while(!contractSigned){
         switch (state) {
             case 0: {
-                GetUserInfo(Username,Password);
+                getUserInfo(Username, Password);
                 state++;
                 break;}
             case 1: {
-                ChooseFood(&state, &nrMenu, &FoodChoice);
+                chooseFood(&state, &nrMenu, &FoodChoice);
                 break;}
             case 2: {
-                ChooseMenu( nrMenu, FoodChoice, &state, &MenuChoice );
+                chooseMenu(nrMenu, FoodChoice, &state, &MenuChoice);
                 break;}
             case 3: {
                 printAdditionalItemsChoices(noAdditionalItems,additionalItems,  additionalItemsPrices);
                 noAddItemsChosen = chooseAdditionalItems(noAdditionalItems, chosenAdditionalItems, &state);
                 break;}
             case 4:{
-                AskCutlery( &state,&cutleryChoice);
+                askCutlery(&state, &cutleryChoice);
                 break;}
             case 5: {
-                AdditionalInfo( &state, &ok, Comment);
+                additionalInfo(&state, &ok, Comment);
                 break;}
             case 6:{
-                DisplayContract(Username, FoodChoice, MenuChoice, noAddItemsChosen, chosenAdditionalItems, cutleryChoice, ok, &contractSigned, Comment, &state);
+                contractStep(Username, FoodChoice, MenuChoice, noAddItemsChosen, chosenAdditionalItems,cutleryChoice, ok, &contractSigned, Comment, &state);
                 break;}
         }
     }

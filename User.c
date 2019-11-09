@@ -2,24 +2,15 @@
 //
 // Created by razvi on 11/3/2019.
 //
-
-void GetUserInfo(char Username[],char Password[]){
+void getUserInfo(char *Username, char *Password){
     printf("Please sign in to continue!\n");
-
     printf("---Username:\n");
-
     gets(Username);
-
     printf("---Password:\n");
-
     gets(Password);
-
 }
 
-
-
-
-void AdditionalInfo(int *state, int *ok,char *Comment){
+void additionalInfo(int *state, int *ok, char *Comment){
     int choice;
     //additional information
     printf("Any additional info?\n");
@@ -29,7 +20,8 @@ void AdditionalInfo(int *state, int *ok,char *Comment){
     choice = getchar();
     getchar();
     if (choice == 'b')
-    {(*state)++;
+    {
+        (*state)++;
         *ok=0;
     }
     if(choice == 'c') {
@@ -42,11 +34,7 @@ void AdditionalInfo(int *state, int *ok,char *Comment){
         (*state)++;}
 }
 
-
-
-
-
-void DisplayContract(char Username[], int FoodChoice, int MenuChoice, int noAddItemsChosen, const int *chosenAdditionalItems, int cutleryChoice, int ok, int *contractSigned, char *Comment, int *state){
+void contractStep(char *Username, int FoodChoice, int MenuChoice, int noAddItemsChosen, int *chosenAdditionalItems, int cutleryChoice, int ok, int *contractSigned, char *Comment, int *state){
     char Options[3][4][20] = {
             {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita" },
             {"Chicken alfredo", "Mac&cheese"},
@@ -71,32 +59,19 @@ void DisplayContract(char Username[], int FoodChoice, int MenuChoice, int noAddI
         for(int i=0;i<noAddItemsChosen;i++) {
             printf("--%s (%.2f)\n", additionalItems[chosenAdditionalItems[i]], additionalItemsPrices[chosenAdditionalItems[i]]);
         }
-
     }
     printf("Cutlery: %s\n",v[cutleryChoice]);
-
     if(ok) printf("Additional info: %s\n",Comment);
-
     printf("Total price: %.2f\n", prices[FoodChoice][MenuChoice] + additionalItemsPrice);
-
     printf("-------------\n");
-
     printf("a) Sign\n");
-
     printf("b) Go back\n");
-
     int  choice = getchar();
-
     if(choice=='a') {
-
         *contractSigned = 1;
         printf("Order confirmed! Thank you for buying from us, %s!",Username);
     } else {
-
         (*state)--;
-
     }
-
     getchar();
-
 }
