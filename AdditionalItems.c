@@ -4,21 +4,24 @@
 // Created by razvi on 11/4/2019.
 //
 
-void printAdditionalItemsChoices(int noAdditionalItems, char additionalItems[][MAX_ADDITIONAL_ITEM_NAME], double additionalItemsPrices[]) {
+void printAdditionalItemsChoices(int noOfDrinks, char** drinks, double* drinkPrice) {
     // Choose the additional items
     printf("Choose additional items (separated by comma)\n");
-    for (int i = 0; i < noAdditionalItems; i++) {
+    for (int i = 0; i < noOfDrinks; i++) {
         putchar('a' + i);
-        printf(") %s (%.2f)\n", additionalItems[i], additionalItemsPrices[i]);
+        printf(") %s (%.2f)\n", drinks[i], drinkPrice[i]);
     }
-    printf("%c) Go back\n", 'a' + noAdditionalItems);
+    printf("%c) No drink\n", 'a' + noOfDrinks);
+    printf("%c) Go back\n", 'a' + noOfDrinks+1);
 }
 
-int chooseAdditionalItems(int noAdditionalItems, int chosenAdditionalItems[], int * state)
+int chooseAdditionalItems(int* ok,int noOfDrinks, int* chosenAdditionalItems, int * state)
 {
     int noAddItemsChosen = 0;
     int choice = getchar();
-    if(choice == 'a'+noAdditionalItems) {
+    if(choice == 'a' + noOfDrinks)
+    {*ok=0;}
+    if(choice == 'a' + noOfDrinks+1) {
         (*state)--;
                  //consume new line
         getchar();

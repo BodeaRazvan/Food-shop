@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 //
 // Created by razvi on 11/3/2019.
 //
@@ -10,60 +12,42 @@ void getUserInfo(char *Username, char *Password){
     gets(Password);
 }
 
-void additionalInfo(int *state, int *ok, char *Comment){
-    int choice;
-    //additional information
-    printf("Any additional info?\n");
-    printf("%c) Yes\n", 'a');
-    printf("%c) No\n", 'b');
-    printf("%c) Go back\n", 'c');
-    choice = getchar();
-    getchar();
-    if (choice == 'b')
-    {
-        (*state)++;
-        *ok=0;
-    }
-    if(choice == 'c') {
-        (*state)--;
-    }
-    if(choice == 'a')
-    { printf("Please write your additional information!\n");
-        gets(Comment);
-        *ok=1;
-        (*state)++;}
+void additionalInfo(int *state, char *comment) {
+    printf("Any additional info? (enter for no comment)\n");
+    printf("c) Go back\n");
+    gets(comment);
+  if(comment[0]=='c'){
+      (*state)--;
+  }else{
+      (*state)++;
+  }
 }
 
-void contractStep(char *Username, int FoodChoice, int MenuChoice, int noAddItemsChosen, int *chosenAdditionalItems, int cutleryChoice, int ok, int *contractSigned, char *Comment, int *state){
-    char Options[3][4][20] = {
-            {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita" },
-            {"Chicken alfredo", "Mac&cheese"},
-            {"Tuna Salad", "Chicken Salad", "Greek Salad", "Cobb"}
-    };
-    double prices[3][4] = {
-            {21, 23, 19},
-            {23, 21},
-            {23, 22, 19, 21 }
-    };
+
+void displayContractStep(int *ok,char***specificFood,double**prices,char**drinks,double*drinkPrice,char *Username, int FoodChoice, int MenuChoice, int noAddItemsChosen, int *chosenAdditionalItems, int cutleryChoice, int *contractSigned, char *Comment, int *state){
+
     char v[][10]={"Yes","No"};
-    char additionalItems[][30] = {"Coca-cola","Fanta","Lipton","Water"};
-    double additionalItemsPrices[] = {5, 5, 5, 4};
     printf("Name: %s\n",Username);
     printf("Food items:\n");
-    printf("--%s (%.2f)\n", Options[FoodChoice][MenuChoice], prices[FoodChoice][MenuChoice]);
+    printf("--%s (%.2f)\n", specificFood[FoodChoice][MenuChoice], prices[FoodChoice][MenuChoice]);
     double additionalItemsPrice = 0;
+    if(*ok==1){
     for(int i=0;i<noAddItemsChosen;i++) {
-        additionalItemsPrice += additionalItemsPrices[chosenAdditionalItems[i]];
+        additionalItemsPrice += drinkPrice[chosenAdditionalItems[i]];
+    }}
+    else{additionalItemsPrice=0;
+
     }
-    if(noAddItemsChosen!=0){
+    if(*ok==1){
         for(int i=0;i<noAddItemsChosen;i++) {
-            printf("--%s (%.2f)\n", additionalItems[chosenAdditionalItems[i]], additionalItemsPrices[chosenAdditionalItems[i]]);
+            printf("--%s (%.2f)\n", drinks[chosenAdditionalItems[i]], drinkPrice[chosenAdditionalItems[i]]);
         }
     }
     printf("Cutlery: %s\n",v[cutleryChoice]);
-    if(ok) printf("Additional info: %s\n",Comment);
+     if(strlen(Comment)!=0) {  printf("Additional info: %s\n", Comment);}
     printf("Total price: %.2f\n", prices[FoodChoice][MenuChoice] + additionalItemsPrice);
     printf("-------------\n");
+    printf("Confirm your order?\n");
     printf("a) Sign\n");
     printf("b) Go back\n");
     int  choice = getchar();
