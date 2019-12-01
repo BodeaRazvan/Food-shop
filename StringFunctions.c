@@ -79,3 +79,4 @@ void removeChar(char *str, char garbage) {
     }
     *dst = '\0';
 }
+

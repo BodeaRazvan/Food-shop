@@ -3,7 +3,6 @@
 //
 // Created by razvi on 11/4/2019.
 //
-
 void printAdditionalItemsChoices(int noOfDrinks, char** drinks, double* drinkPrice) {
     // Choose the additional items
     printf("Choose additional items (separated by comma)\n");
