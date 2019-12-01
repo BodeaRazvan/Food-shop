@@ -25,4 +25,3 @@ void freeMemory(char*userName,char*userPassword,char*comment,int* chosenAddition
     free(userPassword);
     free(comment);
 }
-

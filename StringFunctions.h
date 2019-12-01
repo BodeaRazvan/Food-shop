@@ -12,4 +12,3 @@ char *extract(const char *const string, const char *const left, const char *cons
 int getIndex(char* string, char c);
 
 #endif //FOODSHOP_STRINGFUNCTIONS_H
-
