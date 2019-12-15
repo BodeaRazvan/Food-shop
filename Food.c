@@ -3,16 +3,15 @@
 //
 // Created by razvi on 11/5/2019.
 //
-void chooseFood(int *state, int *nrMenu, int *FoodChoice){
+void chooseFood(char** foodType, int *state, int *nrMenu, int *FoodChoice){
     // Choose the food
     int var=0;
     int nrFood=3;
-    char Food[][10] = {"Pizza","Pasta","Salad"};
     int choice;
     printf("Please choose the food you feel like eating today:\n");
     for(int i=0;i<nrFood;i++) {
         putchar('a'+i);
-        printf(") %s\n",Food[i]);
+        printf(") %s\n",foodType[i]);
     }
     printf("%c) Go back\n",'a'+nrFood);
     choice = getchar();
@@ -52,20 +51,8 @@ void askCutlery(int *state, int *cutleryChoice){ *state=4;
     (*state)++;
 }
 
-void chooseMenu(int nrMenu, int FoodChoice, int *state, int *MenuChoice ){
+void chooseMenu(char**Food,char***Options,int*FoodType,double**prices,int nrMenu, int FoodChoice, int *state, int *MenuChoice ){
     // Choose the food type
-    int FoodType[] = {3,3,4};
-    char Food[][10] = {"Pizza","Pasta","Salad"};
-    char Options[3][4][20] = {
-            {"Pizza Carbonara", "Pizza Diavola", "Pizza Margherita" },
-            {"Chicken alfredo", "Mac&cheese"},
-            {"Tuna Salad", "Chicken Salad", "Greek Salad", "Cobb"}
-    };
-    double prices[3][4] = {
-            {21, 23, 19},
-            {23, 21},
-            {23, 22, 19, 21 }
-    };
     printf("Please choose the type of %s\n",Food[FoodChoice]);
     for(int i=0;i<nrMenu;i++) {
         putchar('a'+i);
