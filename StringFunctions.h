@@ -1,6 +1,7 @@
 //
 // Created by razvi on 11/29/2019.
 //
+
 #define MAX_LENGTH 100
 #ifndef FOODSHOP_STRINGFUNCTIONS_H
 #define FOODSHOP_STRINGFUNCTIONS_H
